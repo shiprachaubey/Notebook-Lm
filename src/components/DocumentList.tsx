@@ -135,7 +135,7 @@ const DocumentList: React.FC<DocumentListProps> = ({ collapsed }) => {
       {documents.map((doc) => (
         <div
           key={doc.id}
-          className="group relative p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors flex items-center"
+          className="group relative px-3 py-2 hover:bg-gray-700 cursor-pointer transition-colors flex items-center"
           onClick={() => handleDocumentClick(doc)}
         >
           <div className="flex items-center min-w-0 flex-1">
@@ -144,7 +144,7 @@ const DocumentList: React.FC<DocumentListProps> = ({ collapsed }) => {
               <div className="flex-1 min-w-0 ml-3">
                 {editingId === doc.id ? (
                   <input
-                    className="text-sm font-medium border border-blue-400 rounded px-2 py-1 w-full bg-white text-gray-900 focus:outline-none"
+                    className="text-sm font-medium border border-blue-400 rounded px-2 py-1 w-full bg-gray-800 text-gray-100 focus:outline-none"
                     value={editValue}
                     autoFocus
                     onClick={e => e.stopPropagation()}
@@ -156,7 +156,7 @@ const DocumentList: React.FC<DocumentListProps> = ({ collapsed }) => {
                     }}
                   />
                 ) : (
-                  <p className="text-sm font-medium text-gray-900 truncate">{doc.name}</p>
+                  <p className="text-sm font-medium text-gray-300 truncate">{doc.name}</p>
                 )}
               </div>
             )}
@@ -164,7 +164,7 @@ const DocumentList: React.FC<DocumentListProps> = ({ collapsed }) => {
 
           {/* Three-dot menu button */}
           <button
-            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-full hover:bg-gray-200 focus:outline-none z-20"
+            className="absolute right-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-full hover:bg-gray-600 focus:outline-none z-20"
             onClick={e => {
               e.stopPropagation();
               setMenuOpenId(menuOpenId === doc.id ? null : doc.id);

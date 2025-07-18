@@ -3,6 +3,7 @@ import { Plus, Search, Square, CheckSquare, FileText } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import AddSourcesModal from './AddSourcesModal';
 import DiscoverModal from './DiscoverModal';
+import DocumentList from './DocumentList';
 
 const Sidebar: React.FC = () => {
   const { documents, toggleDocumentSelection, selectAllDocuments, addDocument } = useApp();
@@ -57,23 +58,7 @@ const Sidebar: React.FC = () => {
 
       {/* Documents List */}
       <div className="flex-1 p-4">
-        <div className="space-y-2">
-          {documents.map((doc) => (
-            <div
-              key={doc.id}
-              className="flex items-center space-x-3 p-2 hover:bg-gray-700 rounded-lg cursor-pointer transition-colors"
-              onClick={() => toggleDocumentSelection(doc.id)}
-            >
-              {doc.selected ? (
-                <CheckSquare className="w-4 h-4 text-blue-400" />
-              ) : (
-                <Square className="w-4 h-4 text-gray-400" />
-              )}
-              <FileText className="w-4 h-4 text-gray-400" />
-              <span className="text-sm text-gray-300">{doc.name}</span>
-            </div>
-          ))}
-        </div>
+        <DocumentList collapsed={false} />
       </div>
     </div>
 
