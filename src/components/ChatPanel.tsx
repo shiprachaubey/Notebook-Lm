@@ -60,7 +60,7 @@ const ChatPanel: React.FC = () => {
   }, [currentInput]);
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-900">
+    <div className="flex-1 flex flex-col h-full bg-gray-900">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
         <h2 className="text-lg font-medium text-white">Chat</h2>
